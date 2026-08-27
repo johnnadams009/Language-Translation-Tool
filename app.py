@@ -12,7 +12,7 @@ api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
 st.set_page_config(page_title="AI Language Translator", page_icon="🌐", layout="centered")
 
 st.title("🌐 AI Language Translator")
-st.caption("Powered by Gemini 2.5 Flash")
+st.caption("Powered by Gemini 3.6 Flash")
 
 if not api_key:
     st.error("Missing Gemini API Key. Please set it in .env or Streamlit Secrets.")
@@ -48,7 +48,7 @@ if st.button("Translate", type="primary"):
             """
             try:
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-3.6-flash",
                     contents=prompt,
                     config=types.GenerateContentConfig(temperature=0.3)
                 )
